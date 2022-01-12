@@ -1,6 +1,5 @@
 import React, { useEffect, useContext } from 'react';
 import { UserContext } from '../../contexts/UserContext';
-import { Text } from "react-native";
 import { Container, LoadingIcon } from "./styles";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
@@ -30,10 +29,9 @@ export default () => {
                         avatar: json.data.avatar
                     }
                 });
-
-                navigation.reset({
-                    routes: [{ name: 'MainTab' }]
-                });
+                
+                navigation.navigate('MainTab');
+           
                } else {
                 navigation.navigate('SignIn');
                }
