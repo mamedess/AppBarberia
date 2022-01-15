@@ -30,8 +30,11 @@ export default () => {
                     }
                 });
                 
-                navigation.navigate('MainTab');
-           
+                
+                navigation.reset({
+                    index: 0,
+                    routes: [{ name: 'MainTab' }]
+                });
                } else {
                 navigation.navigate('SignIn');
                }
@@ -40,9 +43,10 @@ export default () => {
                 navigation.navigate('SignIn');
             }
         }
+
         checarToken();
 
-    });
+    },[]);
     return (
         <Container>
             <BarberLogo width="100%" height="160" />
